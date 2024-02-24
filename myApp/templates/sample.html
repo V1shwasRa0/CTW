@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Troopers Website</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f2f1;
+            /* Material Green background color */
+        }
+
+        header,
+        nav,
+        footer {
+            background-color: #4caf50;
+            /* Material Green common color */
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        header {
+            padding: 10px;
+        }
+
+        nav a,
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 15px;
+            /* Increased margin for better spacing */
+            transition: background-color 0.3s;
+            /* Smooth transition on hover effect */
+        }
+
+        nav a:hover,
+        .nav-link:hover {
+            background-color: #388e3c;
+            /* Darker shade on hover */
+        }
+
+        section,
+        .section {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Climate Troopers</h1>
+        <p>Join the fight against climate change!</p>
+    </header>
+
+    <nav>
+        <a href="{% url 'home' %}" class="nav-link">Home</a>
+        <a href="{% url 'about_us' %}" class="nav-link">About Us</a>
+        <a href="#" class="nav-link">Projects</a>
+        <a href="{% url 'our_impact' %}" class="nav-link">Our Impact</a>
+        <a href="#" class="nav-link">Contact</a>
+    </nav>
+
+    <footer>
+        <p>&copy; 2024 Climate Troopers. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

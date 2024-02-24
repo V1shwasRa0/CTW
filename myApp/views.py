@@ -7,3 +7,6 @@ def home(request):
 
 def about_us(request):
     return render(request,"aboutus.html")
+
+def our_impact(request):
+    return render(request, 'ourImpact.html')
