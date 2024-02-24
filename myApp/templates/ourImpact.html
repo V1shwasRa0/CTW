@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Troopers Website</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f2f1;
+            /* Material Green background color */
+        }
+
+        header {
+            background-color: #43a047;
+            /* Material Green header color */
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #4caf50;
+            /* Material Green navbar color */
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 15px;
+            /* Increased margin for better spacing */
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #388e3c;
+            /* Material Green lighter shade on hover */
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            margin-bottom: 20px;
+        }
+
+        .image-bar {
+            overflow: hidden;
+        }
+
+        .image-bar img {
+            width: 150px;
+            height: 150px;
+            margin-right: 10px;
+        }
+
+        footer {
+            background-color: #4caf50;
+            /* Material Green footer color */
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Climate Troopers</h1>
+        <p>Join the fight against climate change!</p>
+    </header>
+
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about_us' %}">About Us</a>
+        <a href="#projects">Projects</a>
+        <a href="{% url 'our_impact' %}">Our Impact</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="impact">
+        <h2>Our Impact</h2>
+        <!-- @hardik
+            yeh random images mene upload ki hai "ibb.co" pe. wahan se link daali hai -->
+        <div class="image-bar" id="scroll-container">
+            <a href="https://ibb.co/cFWWjpj"><img src="https://i.ibb.co/cFWWjpj/IMG-20240224-WA0006.jpg"
+                    alt="IMG-20240224-WA0006" border="0"></a>
+            <a href="https://ibb.co/NrR54qc"><img src="https://i.ibb.co/NrR54qc/IMG-20240224-WA0007.jpg"
+                    alt="IMG-20240224-WA0007" border="0"></a>
+            <a href="https://ibb.co/6D3JKZx"><img src="https://i.ibb.co/6D3JKZx/IMG-20240224-WA0008.jpg"
+                    alt="IMG-20240224-WA0008" border="0"></a>
+            <a href="https://ibb.co/YhDxVvm"><img src="https://i.ibb.co/YhDxVvm/IMG-20240224-WA0009.jpg"
+                    alt="IMG-20240224-WA0009" border="0"></a>
+            <a href="https://ibb.co/PDBGtPm"><img src="https://i.ibb.co/PDBGtPm/IMG-20240224-WA0010.jpg"
+                    alt="IMG-20240224-WA0010" border="0"></a>
+            <a href="https://ibb.co/2YpCxcf"><img src="https://i.ibb.co/2YpCxcf/IMG-20240224-WA0011.jpg"
+                    alt="IMG-20240224-WA0011" border="0"></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Climate Troopers. All rights reserved.</p>
+    </footer>
+
+    <!-- @hardik
+        js code for moving images (currently not working) -->
+    <script>
+        // Auto-scrolling images
+        let scrollContainer = document.getElementById("scroll-container");
+
+        function autoScroll() {
+            if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
+                scrollContainer.scrollLeft = 0;
+            } else {
+                scrollContainer.scrollLeft += 2; // Adjust the scrolling speed as needed
+            }
+        }
+
+        setInterval(autoScroll, 50); // Adjust the interval as needed
+    </script>
+</body>
+
+</html>
