@@ -54,13 +54,39 @@
         }
 
         .image-bar {
+            white-space: nowrap;
             overflow: hidden;
+            width: 100vw; /* Adjusted width to viewport width */
+            animation: scrollImages 20s linear infinite; /* Adjust duration as needed */
+        }
+
+        .image-bar a {
+            display: inline-block;
+            margin-right: 10px;
         }
 
         .image-bar img {
             width: 150px;
             height: 150px;
-            margin-right: 10px;
+            animation: moveImage 20s linear infinite; /* Adjust duration as needed */
+        }
+
+        @keyframes scrollImages {
+            0% {
+                transform: translateX(100%); /* Move the images off-screen to the right initially */
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes moveImage {
+            0% {
+                transform: translateX(100%); /* Move each image off-screen to the right initially */
+            }
+            100% {
+                transform: translateX(-100%); /* Move each image off-screen to the left */
+            }
         }
 
         footer {
@@ -89,8 +115,6 @@
 
     <section id="impact">
         <h2>Our Impact</h2>
-        <!-- @hardik
-            yeh random images mene upload ki hai "ibb.co" pe. wahan se link daali hai -->
         <div class="image-bar" id="scroll-container">
             <a href="https://ibb.co/cFWWjpj"><img src="https://i.ibb.co/cFWWjpj/IMG-20240224-WA0006.jpg"
                     alt="IMG-20240224-WA0006" border="0"></a>
@@ -110,23 +134,6 @@
     <footer>
         <p>&copy; 2024 Climate Troopers. All rights reserved.</p>
     </footer>
-
-    <!-- @hardik
-        js code for moving images (currently not working) -->
-    <script>
-        // Auto-scrolling images
-        let scrollContainer = document.getElementById("scroll-container");
-
-        function autoScroll() {
-            if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
-                scrollContainer.scrollLeft = 0;
-            } else {
-                scrollContainer.scrollLeft += 2; // Adjust the scrolling speed as needed
-            }
-        }
-
-        setInterval(autoScroll, 50); // Adjust the interval as needed
-    </script>
 </body>
 
 </html>
