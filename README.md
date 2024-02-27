@@ -29,5 +29,3 @@ CTW/
 |   |-- views.py                    # Define views
 |
 |-- manage.py
-
-just checking something
