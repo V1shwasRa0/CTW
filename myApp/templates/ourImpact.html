@@ -6,13 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Climate Troopers Website</title>
 
+    <!-- full page general css -->
     <style>
+        html,
+        body {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Apply border-box box-sizing to all elements and pseudo-elements */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #e0f2f1;
             /* Material Green background color */
+            overflow-x: hidden;
         }
 
         header {
@@ -53,42 +72,6 @@
             margin-bottom: 20px;
         }
 
-        .image-bar {
-            white-space: nowrap;
-            overflow: hidden;
-            width: 100vw; /* Adjusted width to viewport width */
-            animation: scrollImages 20s linear infinite; /* Adjust duration as needed */
-        }
-
-        .image-bar a {
-            display: inline-block;
-            margin-right: 10px;
-        }
-
-        .image-bar img {
-            width: 150px;
-            height: 150px;
-            animation: moveImage 20s linear infinite; /* Adjust duration as needed */
-        }
-
-        @keyframes scrollImages {
-            0% {
-                transform: translateX(100%); /* Move the images off-screen to the right initially */
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        @keyframes moveImage {
-            0% {
-                transform: translateX(100%); /* Move each image off-screen to the right initially */
-            }
-            100% {
-                transform: translateX(-100%); /* Move each image off-screen to the left */
-            }
-        }
-
         footer {
             background-color: #4caf50;
             /* Material Green footer color */
@@ -96,7 +79,145 @@
             padding: 10px;
             text-align: center;
         }
+
+        /* Styling for the 'permas' container */
+        #permas {
+            height: 300px;
+            position: absolute;
+            overflow: hidden;
+            white-space: nowrap;
+            left: 0;
+            top: 250px;
+            animation: scroll 50s linear infinite;
+        }
+
+        /* Styling for images within 'permas' */
+        #permas img {
+            height: 100%;
+        }
+
+        /* Keyframes animation for horizontal scrolling */
+        @keyframes scroll {
+            100% {
+                transform: translateX(-50%);
+            }
+        }
     </style>
+
+    <!-- css for textbox grid -->
+    <style>
+        #impact {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .grid-item {
+            background-color: #e0f2f1;
+            /* Material Green background color */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+    </style>
+
+    <!-- css for cleanup drives -->
+    <style>
+        #river-cleanup {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 40px;
+            background: linear-gradient(to bottom, #b2ebf2, #ffffff);
+            text-align: justify;
+            /* Justify-align the text */
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+
+        .text-container {
+            max-width: 600px;
+        }
+
+        #river-cleanup h2 {
+            color: #333;
+        }
+
+        #river-cleanup p {
+            margin-bottom: 15px;
+        }
+
+        #railway-cleanup {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 40px;
+            background: linear-gradient(to bottom, #b2ebf2, #ffffff);
+            text-align: justify;
+        }
+
+        #railway-cleanup .image-container img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+
+        #railway-cleanup h2 {
+            color: #333;
+        }
+
+        #railway-cleanup p {
+            margin-bottom: 15px;
+        }
+
+        /* Add this to your existing CSS */
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Add the following new CSS */
+        .text-container,
+        .image-container {
+            flex: 1;
+        }
+
+        .image-container img {
+            width: 100%;
+            /* Ensure the image takes the full width of its container */
+        }
+
+        /* Add this to your existing CSS */
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Add the following new CSS */
+        .text-container,
+        .image-container {
+            flex: 1;
+            margin: 0 10px;
+            /* Add space between the image and text */
+        }
+
+        .image-container img {
+            width: 100%;
+        }
+    </style>
+
+
 </head>
 
 <body>
@@ -113,23 +234,116 @@
         <a href="#contact">Contact</a>
     </nav>
 
+    <h1>Our Impact</h1>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div id="permas">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+        <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
+    </div>
+
     <section id="impact">
-        <h2>Our Impact</h2>
-        <div class="image-bar" id="scroll-container">
-            <a href="https://ibb.co/cFWWjpj"><img src="https://i.ibb.co/cFWWjpj/IMG-20240224-WA0006.jpg"
-                    alt="IMG-20240224-WA0006" border="0"></a>
-            <a href="https://ibb.co/NrR54qc"><img src="https://i.ibb.co/NrR54qc/IMG-20240224-WA0007.jpg"
-                    alt="IMG-20240224-WA0007" border="0"></a>
-            <a href="https://ibb.co/6D3JKZx"><img src="https://i.ibb.co/6D3JKZx/IMG-20240224-WA0008.jpg"
-                    alt="IMG-20240224-WA0008" border="0"></a>
-            <a href="https://ibb.co/YhDxVvm"><img src="https://i.ibb.co/YhDxVvm/IMG-20240224-WA0009.jpg"
-                    alt="IMG-20240224-WA0009" border="0"></a>
-            <a href="https://ibb.co/PDBGtPm"><img src="https://i.ibb.co/PDBGtPm/IMG-20240224-WA0010.jpg"
-                    alt="IMG-20240224-WA0010" border="0"></a>
-            <a href="https://ibb.co/2YpCxcf"><img src="https://i.ibb.co/2YpCxcf/IMG-20240224-WA0011.jpg"
-                    alt="IMG-20240224-WA0011" border="0"></a>
+        <div class="grid-container">
+            <div class="grid-item">
+                <p>Students from SICSR collaborated with the Adar Poonawalla Clean City Initiative, leading impactful
+                    cleanup drives across Pune, contributing to a cleaner and healthier planet.</p>
+            </div>
+
+            <div class="grid-item">
+                <p>In partnership, students actively participated in community cleanup initiatives, revitalizing local
+                    spaces by removing tons of waste, making parks, streets, and public areas more enjoyable for
+                    everyone.</p>
+            </div>
+
+            <div class="grid-item">
+                <p>Focusing on reducing plastic pollution, students partnered with the initiative for awareness
+                    campaigns and cleanup activities, working towards a sustainable and plastic-free future.</p>
+            </div>
+
+            <div class="grid-item">
+                <p>Beyond physical cleanup, SICSR students and the initiative initiated workshops, seminars, and
+                    awareness programs to educate and inspire communities about waste management and environmental
+                    conservation.</p>
+            </div>
+
+            <div class="grid-item">
+                <p>Supported by the Adar Poonawalla Clean City Initiative, cleanup drives have forged strong
+                    partnerships with local communities, building a network of environmental stewards committed to
+                    keeping surroundings clean and green.</p>
+            </div>
+
+            <div class="grid-item">
+                <p>Celebrate the achievements of SICSR students and the Adar Poonawalla Clean City Initiative. Join our
+                    ongoing journey to create a positive impact through community-driven environmental initiatives.</p>
+            </div>
         </div>
     </section>
+
+
+    <section id="river-cleanup">
+        <div class="image-container">
+            <img src="WhatsApp Image 2024-02-26 at 15.14.49_6a752144.jpg" alt="River Cleanup Image">
+        </div>
+        <div class="text-container">
+            <h2>River Cleanup</h2>
+            <p>
+                Our dedicated students took part in a impactful river cleanup initiative.
+                Through collaboration with the Adar Poonawalla Clean City Initiative,
+                we made a significant difference in improving the cleanliness of rivers in Pune.
+            </p>
+            <p>
+                By actively participating in cleanup drives, we aim to raise awareness about environmental
+                conservation and inspire others to join us in our mission for a cleaner and greener world.
+            </p>
+        </div>
+    </section>
+
+    <section id="railway-cleanup">
+        <div class="text-container">
+            <h2>Pune Railway Station Cleanup</h2>
+            <p>
+                In collaboration with the Adar Poonawalla Clean City Initiative, Climate Troopers organized a
+                comprehensive cleanup drive at Pune Railway Station. Students from the Symbiosis Institute of Computer
+                Studies and Research actively participated in this initiative.
+            </p>
+            <p>
+                The cleanup aimed to create awareness about maintaining cleanliness in public spaces and contribute to
+                the Swachh Bharat Abhiyan. Students collected and properly disposed of waste, emphasizing the importance
+                of environmental responsibility.
+            </p>
+            <p>
+                The Pune Railway Station Cleanup project showcased the dedication of Climate Troopers in making a
+                positive impact on the local community and fostering a sense of responsibility towards our environment.
+            </p>
+            <!-- Add more content as needed -->
+        </div>
+        <div class="image-container">
+            <img src="WhatsApp Image 2024-02-26 at 15.14.49_6a752144.jpg" alt="Railway Cleanup Image">
+        </div>
+    </section>
+
+
 
     <footer>
         <p>&copy; 2024 Climate Troopers. All rights reserved.</p>
