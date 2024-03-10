@@ -24,4 +24,4 @@ def blog(request):
     return render(request, 'blog.html')
 
 def contact_us(request):
-    return render(request, 'contact.html')
+    return render(request, 'contact_us.html')
