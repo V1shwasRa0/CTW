@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" initial-scale="1.0" />
+    <title>Responsive Contact Us Page</title>
+    <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'ct_logo.jpg' %}" alt="Climate Troopers Logo" class="logo" /></a>
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'about_us' %}">About Us</a>
+      <a href="{% url 'our_approach' %}">Our Approach</a>
+      <a href="{% url 'our_impact' %}">Our Impact</a>
+      <a href="{% url 'c_p' %}">Corporate Partnerships</a>
+      <a href="{% url 'vol' %}">Volunteering</a>
+      <a href="{% url 'blog' %}">Blog</a>
+      <a href="{% url 'contact_us' %}">Contact Us</a>
+    </header>
+
+    <!--Section-->
+    <section>
+      <div class="section-header">
+        <div class="container">
+          <h2>Contact Us</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-home"></i>
+              </div>
+
+              <div class="contact-info-content">
+                <h4>Address</h4>
+                <p>
+                  4671 Sugar Camp Road,<br /> Owatonna, Minnesota, <br />55060
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+
+              <div class="contact-info-content">
+                <h4>Phone</h4>
+                <p>571-457-2321</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+
+              <div class="contact-info-content">
+                <h4>Email</h4>
+                <p>ntamerrwael@mfano.ga</p>
+              </div>
+            </div>
+          </div>
+
+          <!--Form-->
+          <div class="contact-form">
+            <form action="{% url 'submit_form' %}" method="post" id="contact-form">
+              {% csrf_token %}
+              <h2>Send Message</h2>
+              <div class="input-box">
+                <input type="text" required="true" name="name" />
+                <span>Full Name</span>
+              </div>
+
+              <div class="input-box">
+                <input type="email" required="true" name="email" />
+                <span>Email</span>
+              </div>
+
+              <div class="input-box">
+                <textarea required="true" name="message"></textarea>
+                <span>Type your Message...</span>
+              </div>
+
+              <div class="input-box">
+                <input type="submit" value="Send" name="submit" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
