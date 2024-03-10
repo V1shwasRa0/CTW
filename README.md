@@ -1,8 +1,6 @@
 Project Structure
 
 *Main things are commented
-*Use sample.html as starting point
-*Create a copy of sample.html, rename it and make changes to it accordingly
 
 CTW/
 |
@@ -19,7 +17,6 @@ CTW/
 |       |-- ourImpact.html
 |       |-- home.html
 |       |-- aboutus.html
-|       |-- sample.html
 |   |-- __init__.py
 |   |-- admin.py
 |   |-- apps.py

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Climate Troopers Website</title>
 
-    <!-- full page general css -->
+    {% load static %}
+
     <style>
         html,
         body {
@@ -26,20 +27,12 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e0f2f1;
+            background-color: #c4eed3;
             /* Material Green background color */
             overflow-x: hidden;
-        }
-
-        header {
-            background-color: #43a047;
-            /* Material Green header color */
-            color: #fff;
-            padding: 10px;
-            text-align: center;
         }
 
         nav {
@@ -72,12 +65,54 @@
             margin-bottom: 20px;
         }
 
-        footer {
-            background-color: #4caf50;
-            /* Material Green footer color */
-            color: #fff;
-            padding: 10px;
+        .logo {
+            width: 140px;
+            height: 75px;
+        }
+
+        header {
+            background-color: #f0f0f0;
             text-align: center;
+            padding: 10px;
+        }
+
+        header a {
+            color: forestgreen;
+            padding: 1%;
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+            text-decoration: none;
+            font-size: larger;
+            vertical-align: middle;
+        }
+
+        ul {
+            list-style: none;
+            padding: 10px;
+        }
+
+        li {
+            display: inline;
+            margin: 20px;
+        }
+
+        li a {
+            text-decoration: none;
+        }
+
+        .fl {
+            width: 25px;
+            height: 25px;
+        }
+
+        .f2 {
+            width: 23px;
+            height: 23px;
+        }
+
+        .f3 {
+            width: 21px;
+            height: 21px;
+            border-radius: 5px;
         }
 
         /* Styling for the 'permas' container */
@@ -135,7 +170,7 @@
             align-items: center;
             justify-content: space-around;
             padding: 40px;
-            background: linear-gradient(to bottom, #b2ebf2, #ffffff);
+            background: linear-gradient(to bottom, #7bacec, #ffffff);
             text-align: justify;
             /* Justify-align the text */
         }
@@ -163,7 +198,7 @@
             align-items: center;
             justify-content: space-around;
             padding: 40px;
-            background: linear-gradient(to bottom, #b2ebf2, #ffffff);
+            background: linear-gradient(to bottom, #e4e29c, #ffffff);
             text-align: justify;
         }
 
@@ -222,21 +257,22 @@
 
 <body>
     <header>
-        <h1>Climate Troopers</h1>
-        <p>Join the fight against climate change!</p>
-    </header>
-
-    <nav>
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'ct_logo.jpg' %}" alt="Climate Troopers Logo" class="logo">
+        </a>
         <a href="{% url 'home' %}">Home</a>
         <a href="{% url 'about_us' %}">About Us</a>
-        <a href="#projects">Projects</a>
+        <a href="#">Our Approach</a>
         <a href="{% url 'our_impact' %}">Our Impact</a>
-        <a href="#contact">Contact</a>
-    </nav>
+        <a href="#">Corporate Partnerships</a>
+        <a href="#">Volunteering</a>
+        <a href="#">Blog</a>
+        <a href="{% url 'contact_us' %}">Contact Us</a>
+    </header>
 
     <h1>Our Impact</h1>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     <div id="permas">
         <img class="scroller" src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
@@ -343,9 +379,52 @@
         </div>
     </section>
 
+    <section id="hill-cleanup">
+        <div class="image-container">
+            <img src="path/to/hill_cleanup_image.jpg" alt="Hill Cleanup Image">
+        </div>
+        <div class="text-container">
+            <h2>Hill Cleanup</h2>
+            <p>
+                Climate Troopers, in collaboration with the Adar Poonawalla Clean City Initiative, undertook a
+                significant hill cleanup project. Our dedicated students worked towards preserving the natural beauty
+                of the hills by actively participating in cleanup drives and environmental conservation efforts.
+            </p>
+            <p>
+                The Hill Cleanup initiative aims to raise awareness about the impact of waste on natural ecosystems
+                and inspire a sense of responsibility towards maintaining the ecological balance of our hills and
+                surrounding areas.
+            </p>
+        </div>
+    </section>
+
+
 
 
     <footer>
+        <h4>Thank You for Visiting Our Site</h4>
+        <a href="mailto:climatetroopers@gmail.com" style="text-decoration: none; color: #f0f0f0;">Click to E-mail Your
+            Queries</a>
+        <h4>Visit us at</h4>
+        <ul type="disc">
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=61556785456421&mibextid=ZbWKwL">
+                    <img src="{% static 'fblog.webp' %}" class="fl">
+                </a>
+            </li>
+            <li>*</li>
+            <li>
+                <a href="https://www.instagram.com/climatetroopers?igsh=MWtrM2kzMDRudDg5Zg==">
+                    <img src="{% static 'iglogo.png' %}" class="f2">
+                </a>
+            </li>
+            <li>*</li>
+            <li>
+                <a href="https://x.com/ClimateTroopers?t=LxPutbcgN2jjGEOKC-cgAw&s=09">
+                    <img src="{% static 'xlogo.avif' %}" class="f3">
+                </a>
+            </li>
+        </ul>
         <p>&copy; 2024 Climate Troopers. All rights reserved.</p>
     </footer>
 </body>
