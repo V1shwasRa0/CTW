@@ -9,39 +9,28 @@
     {% load static %}
 
     <style>
-        html,
         body {
             display: flex;
             flex-direction: column;
-            width: 100%;
-            height: 100%;
             margin: 0;
             padding: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+            background-color: #98f3a0;
+            overflow-x: hidden;
         }
 
         h1 {
             text-align: center;
         }
 
-        /* Apply border-box box-sizing to all elements and pseudo-elements */
         *,
         *::before,
         *::after {
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #98f3a0;
-            /* Material Green background color */
-            overflow-x: hidden;
-        }
-
         nav {
             background-color: #4caf50;
-            /* Material Green navbar color */
             padding: 10px;
             text-align: center;
         }
@@ -51,13 +40,11 @@
             text-decoration: none;
             padding: 10px;
             margin: 0 15px;
-            /* Increased margin for better spacing */
             transition: background-color 0.3s;
         }
 
         nav a:hover {
             background-color: #388e3c;
-            /* Material Green lighter shade on hover */
         }
 
         section {
@@ -83,27 +70,109 @@
         header a {
             color: forestgreen;
             padding: 1%;
-            font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-            text-decoration: none;
             font-size: larger;
+            text-decoration: none;
             vertical-align: middle;
         }
 
-        ul {
-            list-style: none;
-            padding: 10px;
+        #gallery {
+            height: 300px;
+            position: absolute;
+            overflow: hidden;
+            white-space: nowrap;
+            left: 0;
+            top: 200px;
+            animation: scroll 50s linear infinite;
         }
 
-        li {
-            display: inline;
-            margin: 20px;
+        #gallery img {
+            height: 100%;
         }
 
-        li a {
+        @keyframes scroll {
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .grid-item {
+            background-color: #e0f2f1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .cleanup-drives {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 40px;
+            background: linear-gradient(to bottom, #7bacec, #ffffff);
+            text-align: justify;
+        }
+
+        .cleanup-drives h2 {
+            color: #333;
+        }
+
+        .cleanup-drives p {
+            margin-bottom: 15px;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+
+        .text-container {
+            max-width: 600px;
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .image-container img {
+            width: 100%;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #f0f0f0;
             text-decoration: none;
         }
 
-        .fl {
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        footer li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer li a {
+            text-decoration: none;
+        }
+
+        .fl,
+        .f2,
+        .f3 {
             width: 25px;
             height: 25px;
         }
@@ -117,142 +186,6 @@
             width: 21px;
             height: 21px;
             border-radius: 5px;
-        }
-
-        /* Styling for the 'permas' container */
-        #permas {
-            height: 300px;
-            position: absolute;
-            overflow: hidden;
-            white-space: nowrap;
-            left: 0;
-            top: 250px;
-            animation: scroll 50s linear infinite;
-        }
-
-        /* Styling for images within 'permas' */
-        #permas img {
-            height: 100%;
-        }
-
-        /* Keyframes animation for horizontal scrolling */
-        @keyframes scroll {
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-    </style>
-
-    <!-- css for textbox grid -->
-    <style>
-        #impact {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .grid-item {
-            background-color: #e0f2f1;
-            /* Material Green background color */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: left;
-        }
-    </style>
-
-    <!-- css for cleanup drives -->
-    <style>
-        #river-cleanup {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            padding: 40px;
-            background: linear-gradient(to bottom, #7bacec, #ffffff);
-            text-align: justify;
-            /* Justify-align the text */
-        }
-
-        .image-container img {
-            width: 100%;
-            max-width: 600px;
-            border-radius: 8px;
-        }
-
-        .text-container {
-            max-width: 600px;
-        }
-
-        #river-cleanup h2 {
-            color: #333;
-        }
-
-        #river-cleanup p {
-            margin-bottom: 15px;
-        }
-
-        #railway-cleanup {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            padding: 40px;
-            background: linear-gradient(to bottom, #e4e29c, #ffffff);
-            text-align: justify;
-        }
-
-        #railway-cleanup .image-container img {
-            width: 100%;
-            max-width: 600px;
-            border-radius: 8px;
-        }
-
-        #railway-cleanup h2 {
-            color: #333;
-        }
-
-        #railway-cleanup p {
-            margin-bottom: 15px;
-        }
-
-        /* Add this to your existing CSS */
-        section {
-            padding: 20px;
-            text-align: center;
-        }
-
-        /* Add the following new CSS */
-        .text-container,
-        .image-container {
-            flex: 1;
-        }
-
-        .image-container img {
-            width: 100%;
-            /* Ensure the image takes the full width of its container */
-        }
-
-        /* Add this to your existing CSS */
-        section {
-            padding: 20px;
-            text-align: center;
-        }
-
-        /* Add the following new CSS */
-        .text-container,
-        .image-container {
-            flex: 1;
-            margin: 0 10px;
-            /* Add space between the image and text */
-        }
-
-        .image-container img {
-            width: 100%;
         }
     </style>
 
@@ -271,36 +204,32 @@
         <a href="#">Corporate Partnerships</a>
         <a href="#">Volunteering</a>
         <a href="#">Blog</a>
-        <a href="{% url 'contact_us' %}">Contact Us</a>
+        <a href="#">Contact Us</a>
     </header>
 
     <h1>Our Impact</h1>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-    <div id="permas">
-        <img class="scroller" src="{% static "/cleanupdrives/20200111_073836.jpg" %}">
-        <img class="scroller" src="{% static "/cleanupdrives/20200111_073903.jpg" %}">
-        <img class="scroller" src="{% static "/cleanupdrives/20200111_073953.jpg" %}">
-        <img class="scroller" src="{% static "/cleanupdrives/20200111_074152.jpg" %}">
-        <img class="scroller" src="{% static "/cleanupdrives/20200111_074317.jpg" %}">
-        <img class="scroller" src="{% static "/cleanupdrives/20200111_074333.jpg" %}">
-        <img class="scroller" src="{% static "/cleanupdrives/20200111_075309.jpg" %}">
-        <img class="scroller" src="{% static "/cleanupdrives/20200111_075500.jpg" %}">
-        <img class="scroller" src="{% static "/cleanupdrives/20200111_075626.jpg" %}">
-        <img class="scroller" src="{% static "/cleanupdrives/20200111_091723.jpg" %}">
-        <img class="scroller" src="{% static "/cleanupdrives/20200111_090030.jpg" %}">
-        <img class="scroller" src="{% static "/cleanupdrives/20200111_090245.jpg" %}">
-        <img class="scroller" src="{% static "/cleanupdrives/20200111_092024.jpg" %}">
-        <img class="scroller" src="{% static "/cleanupdrives/20200111_092553.jpg" %}">
-        <img class="scroller" src="{% static "/cleanupdrives/20200111_092836.jpg" %}">
-        <img class="scroller" src="{% static "/cleanupdrives/20200111_092843.jpg" %}">
-        <img class="scroller" src="{% static "/cleanupdrives/20200111_092859.jpg" %}">
-        <img class="scroller" src="{% static "/cleanupdrives/20200111_095636.jpg" %}">
-        <img class="scroller" src="{% static "/cleanupdrives/IMG_20200111_080446.jpg" %}">
+    <div id="gallery">
+        <img src="https://i.ibb.co/N3Ftg1p/River-Cleanup.jpg">
+        <img src="https://i.ibb.co/LJy0fTP/Station-Cleanup.jpg">
+        <img src="https://i.ibb.co/7N0ZPr6/Ground-Cleanup.jpg">
+        <img src="https://i.ibb.co/NL0J9Hs/Pond-Cleanup.jpg">
+        <img src="https://i.ibb.co/g7NkTZR/Hill-Cleanup.jpg">
+        <img src="https://i.ibb.co/1fvFbJT/Ground-Cleanup-1.jpg">
+        <img src="https://i.ibb.co/kqFr9V9/Ground-Cleanup-2.jpg">
+        <img src="https://i.ibb.co/7t4Rhqd/Ground-Cleanup-3.jpg">
+        <img src="https://i.ibb.co/N37y0z7/Ground-Cleanup-4.jpg">
+        <img src="https://i.ibb.co/HXmBWMT/20191228-084857.jpg">
+        <img src="https://i.ibb.co/QF388Vc/20191228-083317.jpg">
+        <img src="https://i.ibb.co/rbprqJn/20191228-080334.jpg">
+        <img src="https://i.ibb.co/M9LqQQm/20191228-080059.jpg">
+        <img src="https://i.ibb.co/SngftKv/IMG-20191207-083947-01.jpg">
+        <img src="https://i.ibb.co/jJ7kHQ6/IMG-20240224-WA0010.jpg">
     </div>
 
-    <section id="impact">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <section>
         <div class="grid-container">
             <div class="grid-item">
                 <p>Students from SICSR collaborated with the Adar Poonawalla Clean City Initiative, leading impactful
@@ -337,18 +266,18 @@
         </div>
     </section>
 
+    <h1> Cleanup Drives</h1>
 
-    <section id="river-cleanup">
+    <section class="cleanup-drives">
         <div class="image-container">
-            <img src="WhatsApp Image 2024-02-26 at 15.14.49_6a752144.jpg" alt="River Cleanup Image">
+            <img src="https://i.ibb.co/N3Ftg1p/River-Cleanup.jpg" alt="River Cleanup Image">
         </div>
         <div class="text-container">
             <h2>River Cleanup</h2>
             <p>
-                Our dedicated students took part in a impactful river cleanup initiative.
-                Through collaboration with the Adar Poonawalla Clean City Initiative,
-                we made a significant difference in improving the cleanliness of rivers in Pune.
-            </p>
+                Our dedicated students took part in a impactful river cleanup initiative. Through collaboration with the
+                Adar Poonawalla Clean City Initiative, we made a significant difference in improving the cleanliness of
+                rivers in Pune.</p>
             <p>
                 By actively participating in cleanup drives, we aim to raise awareness about environmental
                 conservation and inspire others to join us in our mission for a cleaner and greener world.
@@ -356,7 +285,7 @@
         </div>
     </section>
 
-    <section id="railway-cleanup">
+    <section class="cleanup-drives">
         <div class="text-container">
             <h2>Pune Railway Station Cleanup</h2>
             <p>
@@ -373,16 +302,15 @@
                 The Pune Railway Station Cleanup project showcased the dedication of Climate Troopers in making a
                 positive impact on the local community and fostering a sense of responsibility towards our environment.
             </p>
-            <!-- Add more content as needed -->
         </div>
         <div class="image-container">
-            <img src="WhatsApp Image 2024-02-26 at 15.14.49_6a752144.jpg" alt="Railway Cleanup Image">
+            <img src="https://i.ibb.co/LJy0fTP/Station-Cleanup.jpg" alt="Railway Cleanup Image">
         </div>
     </section>
 
-    <section id="hill-cleanup">
+    <section class="cleanup-drives">
         <div class="image-container">
-            <img src="path/to/hill_cleanup_image.jpg" alt="Hill Cleanup Image">
+            <img src="https://i.ibb.co/g7NkTZR/Hill-Cleanup.jpg" alt="Hill Cleanup Image">
         </div>
         <div class="text-container">
             <h2>Hill Cleanup</h2>
@@ -399,7 +327,23 @@
         </div>
     </section>
 
-
+    <section class="cleanup-drives">
+        <div class="text-container">
+            <h2>Sarasbaug Pond Cleanup</h2>
+            <p>Climate Troopers took a significant step in environmental conservation by actively participating in the
+                cleanup of
+                Sarabaug Pond. In collaboration with the Adar Poonawalla Clean City Initiative, our dedicated students
+                worked
+                tirelessly to restore the beauty and health of this vital water body in Pune.</p>
+            <p>The Sarabaug Pond Cleanup initiative aimed to address issues such as water pollution and habitat
+                degradation. Through
+                community-driven efforts, we strive to create a positive impact on local ecosystems and inspire a sense
+                of
+                responsibility for preserving natural resources.</p>
+        </div>
+        <div class="image-container"><img src="https://i.ibb.co/NL0J9Hs/Pond-Cleanup.jpg" alt="Pond Cleanup Image">
+        </div>
+    </section>
 
 
     <footer>
