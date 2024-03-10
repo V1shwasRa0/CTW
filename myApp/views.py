@@ -6,13 +6,13 @@ def home(request):
     return render(request,"home.html")
 
 def about_us(request):
-    return render(request,"aboutus.html")
-
-def our_impact(request):
-    return render(request, 'ourImpact.html')
+    return render(request,"aboutUs.html")
 
 def our_approach(request):
     return render(request, 'ourApproach.html')
+
+def our_impact(request):
+    return render(request, 'ourImpact.html')
 
 def c_p(request):
     return render(request, 'corporate.html')
