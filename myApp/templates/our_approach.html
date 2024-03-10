@@ -1,0 +1,122 @@
+<html>
+    {% load static %}
+<head>
+    <title>Climate Troopers</title>
+    <link rel="stylesheet" href="static/approachcss.css">
+    <!-- <link rel="icon" href="Stuff\logo_title.png"> -->
+    <style>
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+        }
+        ul {
+                    list-style: none;
+                    padding: 10px;
+                }
+        
+                li {
+                    display: inline;
+                    margin: 20px;
+                }
+                li a{
+                    text-decoration: none;
+                }
+                .fl{
+                    width: 25px;
+                    height: 25px;
+                }
+                .f2{
+                    width: 23px;
+                    height: 23px;
+                }
+                .f3{
+                    width: 21px;
+                    height: 21px;
+                    border-radius: 5px;
+                }
+        </style>
+
+</head>
+<body>
+    <header>
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="https://i.ibb.co/gdMzy16/ct-logo.jpg"  alt="Climate Troopers Logo" class="logo">
+        </a>
+        <a href="{% url 'about_us' %}">About Us</a>
+        <a href="{% url 'our_approach' %}">Our Approach</a>
+        <a href="{% url 'our_impact' %}">Our Impact</a>
+        <a href="{% url 'c_p' %}">Corporate Partnerships</a>
+        <a href="{% url 'vol' %}">Volunteering</a>
+        <a href="{% url 'blog' %}">Blog</a>
+        <a href="{% url 'contact_us' %}">Contact Us</a>    
+    </header>
+    
+    <div id="content">
+        <img src="https://i.ibb.co/Gssj9jb/bodyimg.jpg" width="100%" height="auto" id="img">
+        <div  id="approachText">
+            <h1 style="color: rgb(37, 173, 19);">Our Approach</h1>
+            <p>As a climate change NGO, our approach is multifaceted and strategic, aiming to address the urgent challenges posed by climate change through comprehensive action. Our overarching goal is to foster widespread awareness, advocate for impactful policy changes, and support sustainable initiatives at various levels of society. Here's how we enlarge each aspect of our approach:</p><br>
+            <b>
+                <a href="#A">1. Raising Awareness</a><br><br><br>
+                <a href="#B">2. Advocating for Policy Changes</a><br><br><br>
+                <a href="#C">3. Supporting Sustainable Initiatives</a><br><br><br>
+            </b>
+            <p>By enlarging our approach to encompass raising awareness, advocating for policy changes, and supporting sustainable initiatives, we aim to catalyze transformative change towards a more resilient, equitable, and sustainable future in the face of climate change. Through concerted action and collaboration, we believe that together, we can address the climate crisis and create a healthier planet for current and future generations.</p>
+        </div></center> 
+        <br><br>
+        <div id="Con">
+        <h1>Raising <br>Awareness</h1><br>
+        <p id="A">Education and Outreach: We prioritize educating individuals and communities about the science of climate change, its impacts, and the urgency of collective action. This includes disseminating accessible information through various channels such as workshops, public talks, social media campaigns, and educational materials.
+        <br><br>
+        Highlighting Local Impacts: We emphasize the localized impacts of climate change to make the issue more tangible and relatable to people's lives. By showcasing how climate change affects different regions, ecosystems, and communities, we strive to build empathy and galvanize support for action.
+        <br><br>
+        Engaging Youth: Recognizing the crucial role of young people as agents of change, we actively involve youth in awareness-raising efforts through youth-led initiatives, educational programs, and partnerships with schools and universities.
+        </p><img src="https://i.ibb.co/qsqFN2h/img1.jpg"><br></div><hr>
+        <div id="Con">
+        <h1>Advocating <br>For <br>Policy <br>Changes</h1>
+        <p id="B">Policy Research and Analysis: We conduct rigorous research and analysis to identify key policy gaps and opportunities for action at the local, national, and international levels. This involves assessing existing policies, identifying best practices, and developing evidence-based recommendations for policymakers.
+            <br><br>
+            Lobbying and Campaigning: We engage in targeted advocacy efforts to influence policymakers and decision-makers to enact ambitious climate policies. This includes lobbying for stronger environmental regulations, promoting renewable energy incentives, and advocating for climate-friendly infrastructure projects.
+            <br><br>
+            Building Coalitions: We collaborate with like-minded organizations, civil society groups, and grassroots movements to amplify our advocacy efforts and build a broad-based coalition for climate action. By fostering partnerships and solidarity across diverse sectors, we increase our collective impact and create momentum for change.
+        </p><br><img src="https://i.ibb.co/M1r0DKx/img2.png"><br></div><hr>
+        <div id="Con">
+        <h1>Supporting <br>Sustainable <br>Initiatives</h1>
+        <p id="C">Community Empowerment: We work closely with local communities to co-create and support sustainable initiatives that address their specific needs and challenges. This may include renewable energy projects, sustainable agriculture practices, waste management programs, and climate-resilient infrastructure development.
+            <br><br>
+            Capacity Building: We provide training, resources, and technical assistance to empower communities, organizations, and policymakers to implement sustainable solutions effectively. This includes building skills in climate adaptation, mitigation, and resilience-building, as well as promoting green technologies and practices.
+            <br><br>
+            Innovation and Technology Transfer: We promote innovation and technology transfer to accelerate the adoption of sustainable solutions and facilitate low-carbon development pathways. This may involve supporting research and development initiatives, fostering partnerships with technology providers, and facilitating knowledge exchange and learning.
+        </p><img src="https://i.ibb.co/Cn73vBJ/img3.png"><br></div><hr></b>
+    </div>
+    <footer>
+        <h4>Thank You for Visiting Our Site</h4>
+        <a href = "mailto: climatetroopers@gmail.com" style="text-decoration: none; color: #f0f0f0;">Click to E-mail Your Queries</a>
+        <h4>Visit us at</h4>
+        <ul type="disc">
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=61556785456421&mibextid=ZbWKwL">
+                    <img src="https://i.ibb.co/Ykvx3Lv/fblog.webp" class="fl">
+                </a>
+            </li>
+            <li>*</li>
+            <li>
+                <a href="https://www.instagram.com/climatetroopers?igsh=MWtrM2kzMDRudDg5Zg==">
+                    <img src="{% static 'iglogo.png' %}" class="f2">
+                </a>
+            </li>
+            <li>*</li>
+            <li>
+                <a href="https://x.com/ClimateTroopers?t=LxPutbcgN2jjGEOKC-cgAw&s=09">
+                    <img src="https://i.ibb.co/k3d3kQF/xlogo.jpg" class="f3">
+                </a>
+            </li>
+        </ul>
+        <p>&copy; 2024 Climate Troopers. All rights reserved.</p>
+    </footer>
+</body>
+</html>

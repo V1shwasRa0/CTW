@@ -1,87 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Climate Troopers</title>
+    <title>ABOUT US</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
     <style>
-        /* Include the styles from the homepage or customize as needed */
-        body {
-            font-family: Arial, sans-serif;
+        /* * {
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            box-sizing: border-box;
+        } */
+
+        /* Global Styles */
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
         }
 
+        /* Header */
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: #f0f0f0;
+            text-align: center;
             padding: 10px;
+        }
+
+        .logo {
+            width: 140px;
+            height: 75px;
+        }
+
+        /* About Section */
+        .about {
+            background: #207521;
+            background: linear-gradient(360deg, rgb(55, 176, 55)100%, rgb(120, 224, 120) 100%);
+            padding: 100px 0 20px 0;
             text-align: center;
         }
 
-        nav {
-            background-color: #555;
-            padding: 10px;
-            text-align: center;
+        .about h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
         }
 
-        nav a {
-            color: #fff;
+        .about p {
+            font-size: 1rem;
+            color: #323030;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-info {
+            margin: 2rem auto;
+            max-width: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .about-img {
+            width: 40%;
+            max-width: 400px;
+            height: auto;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            object-fit: contain;
+        }
+
+        .about-info p {
+            font-size: 1.3rem;
+            margin: 0 2rem;
+            text-align: justify;
+        }
+
+        header a {
+            color: forestgreen;
+            padding: 1%;
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
             text-decoration: none;
-            padding: 10px;
-            margin: 0 10px;
+            font-size: larger;
+            vertical-align: middle;
         }
 
-        section {
-            padding: 20px;
-        }
-
+        /* Footer */
         footer {
             background-color: #333;
             color: #fff;
             padding: 10px;
             text-align: center;
-            position: fixed;
             bottom: 0;
             width: 100%;
         }
+
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            /* gap between images */
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+            padding: 10px;
+        }
+
+        li {
+            display: inline;
+            margin: 20px;
+        }
+        li a{
+            text-decoration: none;
+        }
+        .fl{
+            width: 25px;
+            height: 25px;
+        }
+        .f2{
+            width: 23px;
+            height: 23px;
+        }
+        .f3{
+            width: 21px;
+            height: 21px;
+            border-radius: 5px;
+        }
     </style>
 </head>
-<body>
 
+<body>
     <header>
-        <h1>Climate Troopers</h1>
-        <p>Join the fight against climate change!</p>
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="https://i.ibb.co/ZNJ9fMk/ct-abus-logo.jpg" alt="Climate Troopers Logo" class="logo">
+        </a>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about_us' %}">About Us</a>
+        <a href="{% url 'our_approach' %}">Our Approach</a>
+        <a href="{% url 'our_impact' %}">Our Impact</a>
+        <a href="{% url 'c_p' %}">Corporate Partnerships</a>
+        <a href="{% url 'vol' %}">Volunteering</a>
+        <a href="{% url 'blog' %}">Blog</a>
+        <a href="{% url 'contact_us' %}">Contact Us</a>        
     </header>
 
-    <nav>
-        <a href="home">Home</a>
-        <a href="about_us">About Us</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <section class="about">
+        <h1 class="animate_animated animate_fadeInDown">ABOUT US</h1>
+        <p class="animate_animated animate_fadeInUp" style="font-weight: bold">CLIMATE TROOPERS!...</p>
+        <div class="about-info">
+            <div class="about-img animate_animated animate_fadeInLeft">
+                <img src="https://i.ibb.co/ZNJ9fMk/ct-abus-logo.jpg" alt="ClimateTroopers">
+            </div>
+            <div class="animate_animated animate_fadeInRight">
+                <p>Service learning is a transformative educational approach that combines academic learning with meaningful community service. It goes beyond traditional classroom learning, encouraging students to actively engage with real-world issues, challenges, and opportunities. Our mission is to engage with the community, learn from real-world experiences, and contribute to the greater good. Service learning is important because it connects student learning in the classroom with real-world experiences in the community. Students who participate in it are more deeply engaged in their local communities, gain practical skills, develop their career and personal interests, and are usually more engaged citizens.</p>
+            </div>
+        </div>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Welcome to Climate Troopers, where passion meets purpose in the battle against climate change. Our organization was founded with the belief that collective action is the key to creating a sustainable and resilient future for our planet.</p>
+        <section class="our-core-values">
+            <h1 class="animate_animated animate_fadeInDown">OUR CORE VALUES</h1>
+            <div class="animate_animated animate_fadeInRight">
+                <p>ACTION: We believe that knowledge is meaningless without action. We encourage and support our members to take concrete steps to address climate change.<br>
+                    Collaboration: We recognize that the climate crisis is a global issue that requires a collective effort. We work with partners from all sectors to create a more sustainable future.
+                    Innovation: We embrace new ideas and approaches to tackle the climate crisis. We encourage our members to think creatively and develop innovative solutions.</p>
+            </div>
+        </section>
 
-        <h3>Our Mission</h3>
-        <p>At Climate Troopers, our mission is to inspire and empower individuals to take meaningful actions to combat climate change. We are dedicated to raising awareness, implementing impactful projects, and fostering a global community committed to environmental stewardship.</p>
-
-        <h3>Our Team</h3>
-        <p>Meet the dedicated individuals behind Climate Troopers - a diverse group of environmentalists, scientists, activists, and changemakers. Each member brings unique skills and perspectives, united by a shared commitment to making a positive impact on the environment.</p>
-
-        <h3>Get Involved</h3>
-        <p>We believe that everyone has a role to play in addressing climate change. Whether you're a student, professional, or concerned citizen, there are numerous ways to get involved with Climate Troopers. Join us in our initiatives, participate in events, or contribute to our cause in your own way.</p>
-
-        <h3>Join the Movement</h3>
-        <p>Climate Troopers invites you to join our movement for a greener and more sustainable world. Together, we can create a powerful force for change. Explore our projects, stay informed, and take action – because the fight against climate change starts with each one of us.</p>
+        <section class="what-we-do" style="padding-bottom: 20px;">
+            <h1 class="animate_animated animate_fadeInDown">WHAT WE DO</h1>
+            <div class="animate_animated animate_fadeInRight">
+                <p>Community Focus: This content highlights the act of cleaning up different places within the community, emphasizing a broader impact beyond a single location.
+                    <br>
+                    Action-Oriented: The focus is on the students' cleaning efforts, showcasing their teamwork and initiative in tackling the issue.
+                    <br>
+                    Environmental Awareness: It connects the clean-up to the larger
+   </div>
     </section>
+ <div class="image-container">
+        <img src="https://i.ibb.co/d53S3rY/abus1.jpg" alt="Image 1">
+        <img src="https://i.ibb.co/M7CNzJv/abus2.jpg" alt="Image 2">
+        <img src="https://i.ibb.co/vjvXswy/abus7.jpg" alt="Image 3">
+        <img src="https://i.ibb.co/wWV8yHv/abus9.jpg" alt="Image 4">
+        <img src="https://i.ibb.co/SRn6F6p/abus5.jpg" alt="Image 5">
+        <img src="https://i.ibb.co/2sKz5Vz/abus6.jpg" alt="Image 6">
+        <img src="https://i.ibb.co/ckY3YK1/abus3.jpg" alt="Image 7">
+        <img src="https://i.ibb.co/cYx2xPW/abus8.jpg" alt="Image 8">
+        <img src="https://i.ibb.co/RzL5CJ5/abus4.jpg" alt="Image 9">
+        <img src="https://i.ibb.co/RzL5CJ5/abus4.jpg" alt="Image 10">
+    </div>
 
-    <footer>
-        <p>&copy; 2024 Climate Troopers. All rights reserved.</p>
-    </footer>
-
+<footer>
+    <h4>Thank You for Visiting Our Site</h4>
+    <a href = "mailto: climatetroopers@gmail.com" style="text-decoration: none; color: #f0f0f0;">Click to E-mail Your Queries</a>
+    <h4>Visit us at</h4>
+    <ul>
+        <li>
+            <a href="https://www.facebook.com/profile.php?id=61556785456421&mibextid=ZbWKwL">
+                <img src="https://i.ibb.co/Ykvx3Lv/fblog.webp" class="fl">
+            </a>
+        </li>
+        <li>*</li>
+        <li>
+            <a href="https://www.instagram.com/climatetroopers?igsh=MWtrM2kzMDRudDg5Zg==">
+                <img src="https://i.ibb.co/1nbR1xv/iglogo.png" class="f2">
+            </a>
+        </li>
+        <li>*</li>
+        <li>
+            <a href="https://x.com/ClimateTroopers?t=LxPutbcgN2jjGEOKC-cgAw&s=09">
+                <img src="https://i.ibb.co/k3d3kQF/xlogo.jpg" class="f3">
+            </a>
+        </li>
+    </ul>
+    <p style="color: #f0f0f0;">&copy; 2024 Climate Troopers. All rights reserved.</p>
+</footer>
 </body>
+
 </html>

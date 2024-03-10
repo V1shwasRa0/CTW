@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Partnership</title>
+
+
+</head>
+<style>
+    .logo {
+        width: 140px;
+        height: 75px;
+
+    }
+
+    header {
+        background-color: #f0f0f0;
+        text-align: center;
+        padding: 10px;
+    }
+
+    header a {
+        color: rgb(0, 0, 0);
+        padding: 1%;
+        text-decoration: none;
+        font-size: larger;
+        vertical-align: middle;
+    }
+
+    body {
+        font-family: footlight mt light;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+
+    }
+
+    .bannerimg {
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.166) url("https://i.ibb.co/3MdQBjm/banner1.jpg");
+        background-size: cover;
+        background-position: center;
+        margin-top: -20px;
+        background-attachment: fixed;
+    }
+
+    .bannerimg h1 {
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 10%;
+    }
+
+    .bannerimg h1 span {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        
+    }
+
+    .bannerimg2 {
+        height: 80vh;
+        background: url("https://i.ibb.co/56Tzn6w/banner2.jpg");
+        background-size: cover;
+        background-position: center;
+
+    }
+
+    .bannerimg2 h1 {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 10%;
+    }
+
+    .bannerimg2 h1 span {
+        color: rgb(251, 255, 0);
+        text-align: center;
+
+    }
+
+
+    .cont {
+        margin-top: -50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content {
+        width: 65%;
+        padding: 20px;
+        background-color: #c2c0c0;
+        box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.595);
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .content2 img {
+        height: 100%;
+        width: 35%;
+        border-radius: 5%;
+        float: right;
+    }
+
+    .content2 {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-top: 20px;
+        border-radius: 5px;
+
+    }
+
+
+    .importance {
+        width: 50%;
+
+        margin-top: 20px;
+        padding: 20px;
+        /* background-color: #fff; */
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+        border-radius: 5px;
+
+    }
+
+    @media screen and (max-width: 768px) {
+        .content {
+            width: 100%;
+        }
+
+        .content2 img {
+            width: 50%;
+        }
+
+        .content2 {
+            flex-direction: column;
+        }
+
+    }
+
+
+    .boxes {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        border-radius: 5px;
+
+    }
+
+    h1 {
+        margin-top: 20px;
+        text-align: center;
+
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 28%;
+        height: auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin-bottom: 10px;
+
+    }
+
+    .box img {
+        width: 40%;
+        height: 50%;
+        border-radius: 5px;
+    }
+
+
+    header,
+    nav,
+    footer {
+        background-color: #4caf50;
+        /* Material Green common color */
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+
+    }
+    ul {
+        list-style: none;
+        padding: 10px;
+    }
+
+    li {
+        display: inline;
+         margin: 20px;
+    }
+    li a{
+        text-decoration: none;
+    }
+    .fl{
+        width: 25px;
+        height: 25px;
+    }
+    .f2{
+        width: 23px;
+        height: 23px;
+    }
+    .f3{
+        width: 21px;
+        height: 21px;
+        border-radius: 5px;
+    }
+</style>
+
+<body>
+
+    <header>
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="https://i.ibb.co/gdMzy16/ct-logo.jpg" alt="Climate Troopers Logo" class="logo">
+        </a>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about_us' %}">About Us</a>
+        <a href="{% url 'our_approach' %}">Our Approach</a>
+        <a href="{% url 'our_impact' %}">Our Impact</a>
+        <a href="{% url 'c_p' %}">Corporate Partnerships</a>
+        <a href="{% url 'vol' %}">Volunteering</a>
+        <a href="{% url 'blog' %}">Blog</a>
+        <a href="{% url 'contact_us' %}">Contact Us</a>
+    </header>
+    <div class="bannerimg">
+        
+        <h1>Corporate Partnership Opportunities<br>
+            <span>We believe that corporate partnerships are not only a way to help brands meet their CSR objectives,
+                but also create
+                sustainable impact.</span>
+        </h1>
+
+    </div>
+    <section class="cont">
+        <div class="content">
+            <h2>Different Ways To Partner With Climate Trooper's</h2>
+            <p>At Climate Troopers, we recognize the immense impact that collaborative efforts can have on addressing
+                climate change
+                and promoting sustainability. Our corporate partnerships play a crucial role in advancing our mission
+                and driving
+                positive change in communities worldwide.</p>
+        </div>
+    </section>
+    <section class="content2">
+        <div class="importance">
+            <h2>Our Commitment</h2>
+            <p>Climate Troopers is committed to forging meaningful partnerships with corporations that share our values
+                and vision for
+                a sustainable future. Through these partnerships, we aim to leverage resources, expertise, and networks
+                to implement
+                impactful initiatives and create lasting change.</p>
+            <h2>Partnering for Impact</h2>
+            <p>Our corporate partners play a vital role in supporting a wide range of Climate Troopers' initiatives,
+                including Community Cleanup Drives
+                where together with our corporate partners, we organize community cleanup drives to remove
+                plastic waste from beaches, parks, and urban areas, promoting environmental stewardship and raising
+                awareness about the
+                importance of waste management. Then there is Reforestation Projects which by partnering with
+                corporations, we plant trees in
+                deforested areas, restore degraded ecosystems, and contribute to biodiversity conservation. These
+                reforestation efforts help mitigate
+                climate change, improve air quality, and provide habitat for wildlife.
+            </p>
+        </div>
+        <img src="https://i.ibb.co/BtMnXkr/partnership.jpg" alt="">
+
+    </section>
+    <section class="content2">
+        <img src="https://i.ibb.co/fdWrVLT/joinus.jpg" alt="">
+        <div class="importance">
+            <h2>Our Partners</h2>
+            <p>Sustainability Solutions Ltd. it is committed to sustainability and environmental stewardship. Through
+                our partnership, we
+                have collaborated on various initiatives, including community cleanups and environmental education
+                programs.
+                GreenTech Innovations, it is a leader in eco-friendly technologies. Together, we are exploring
+                innovative solutions to
+                environmental challenges, such as plastic pollution and carbon emissions reduction.</p>
+            <h2>Join Us</h2>
+            <p>If your company shares our commitment to sustainability and wants to make a meaningful impact, we invite
+                you to join us
+                in our mission. Together, we can create a more sustainable and resilient future for generations to come.
+            </p>
+        </div>
+    </section>
+
+    <div class="bannerimg2">
+        <h1> <br>
+            <span></span>
+        </h1>
+
+    </div>
+
+    <h1>How Indias brands have come together for indias climate</h1>
+    <div class="boxes">
+        <div class="box">
+            <img src="https://i.ibb.co/k49qhg6/cee.jpg" alt="">
+            <h2>CEE Centre for Environment Education</h2>
+            <p>The Centre for Environment Education (CEE) is a leading environmental organization based in India that
+                focuses on
+                promoting environmental awareness, education, and sustainable development initiatives.</p>
+        </div>
+        <div class="box">
+            <img src="https://i.ibb.co/Df55Z9M/handprint.jpg" alt="">
+            <h2>Hand Print</h2>
+            <p>Action towards sustainability. As of our last update in January 2022, there isn't a widely recognized or
+                standardized "Handprint logo" specifically
+                associated with sustainability or environmental initiatives. However, it's possible that organizations
+                or initiatives
+                may have developed their own logos or symbols to represent the concept of handprint in their branding or
+                communications.</p>
+        </div>
+        <div class="box">
+            <img src="https://i.ibb.co/wLbQTYs/sayen.jpg" alt="">
+            <h2>Sayen</h2>
+            <p>South Asia Youth Environment Network. Sayen Global Sdn Bhd was founded in 2005 with its head office located in the historic city of George Town in Penang,
+            Malaysia. Sayen Global is renowned for its dedication in producing high-quality food supplements and sought-after
+            beauty products.</p>
+        </div>
+        <div class="box">
+            <img src="https://i.ibb.co/n0nw0GL/mobius.jpg" alt="">
+            <h2>Mobius Foundation</h2>
+            <p>Mobius Foundation, established in 2015, is a non-profit organization working towards environmental
+                sustainability. In a
+                world struggling with scarcity, the foundation believes that 'Environmental Conservation' and
+                'Population Stabilisation'
+                is the key to a better future and a greener planet. info@mobiusf.org</p>
+        </div>
+        <div class="box">
+            <img src="https://i.ibb.co/g6GjT5P/oneplus.jpg" alt="">
+            <h2>OnePlus</h2>
+<p>OnePlus Technology is a Chinese company who makes smartphones, headphones, and backpacks.[6] OnePlus was made in 2013 by
+Pete Lau and Carl Pei. Carl Pei left in October of 2020 to "pursue new ventures" and to "take some time to decompress
+and spend time with his family."[7] OnePlus is owned by BBK Electronics, BBK Electronics also owns Oppo, Vivo, and
+Realme. OnePlus has a small presence in America with only 0.61% control of the market. In India they have a big presence
+with 29% control.[8] OnePlus office is in Shenzhen, China.</p>
+        </div>
+        <div class="box">
+            <img src="https://i.ibb.co/qrfsmfz/decathlon.jpg" alt="">
+            <h2>Decathlon</h2>
+            <p>Decathlon is a French sporting goods retailer that was founded in 1976 in Lille, France. As of 2023, it
+                has over 2,080
+                stores in 56 countries and regions, making it the world's largest sporting goods retailer. Decathlon's
+                headquarters are located at 4 Boulevard de Mons, Villeneuve d'Ascq, Nord-Pas-de-Calais, 59665, France.
+                Their
+                website is www.decathlon-united.com and their phone number is 33 3 20335000.</p>
+        </div>
+    </div>
+
+    <footer>
+        <h4>Thank You for Visiting Our Site</h4>
+        <a href="mailto: climatetroopers@gmail.com" style="text-decoration: none; color: #f0f0f0;">Click to E-mail Your
+            Queries</a>
+        <h4>Visit us at</h4>
+        <ul>
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=61556785456421&mibextid=ZbWKwL">
+                    <img src="https://i.ibb.co/Ykvx3Lv/fblog.webp" class="fl">
+                </a>
+            </li>
+            <li>*</li>
+            <li>
+                <a href="https://www.instagram.com/climatetroopers?igsh=MWtrM2kzMDRudDg5Zg==">
+                    <img src="https://i.ibb.co/1nbR1xv/iglogo.png" class="f2">
+                </a>
+            </li>
+            <li>*</li>
+            <li>
+                <a href="https://x.com/ClimateTroopers?t=LxPutbcgN2jjGEOKC-cgAw&s=09">
+                    <img src="https://i.ibb.co/k3d3kQF/xlogo.jpg" class="f3">
+                </a>
+            </li>
+        </ul>
+        <p>&copy; 2024 Climate Troopers. All rights reserved.</p>
+    </footer>
+
+
+</body>
+
+</html>
