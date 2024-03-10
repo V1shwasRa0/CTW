@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; 
+    color: #333; 
+}
+
+#content {
+    position: relative;
+}
+
+#Con {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; 
+}
+
+#Con p {
+    flex: 1;
+    padding: 20px;
+}
+
+#Con img {
+    max-width: 18%; 
+    height: auto; 
+    margin: 0 20px;
+}
+
+#content h1{
+    color: rgb(37, 173, 19);
+    text-align: left;
+    font-size: 50px;
+    font-family: Comic Sans MS;
+}
+
+#img{
+    display: block;
+    max-width: 100%;
+}
+
+#content a{
+    color: rgb(37, 173, 19);
+    text-decoration: wavy;
+}
+
+#approachText {
+    margin-left: 170px;
+    position: absolute;
+    top: 7%; 
+    right: 15%; 
+    color: white; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 10px;
+}
+
+#approachText h1{
+    font-family: Comic Sans MS;
+}
+
+footer {
+    background-color:#f0f0f0; 
+    color: #048021; 
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+}
+
+.logo{
+    width: 140px;
+    height:75px;
+    }
+
+header {
+    background-color:#f0f0f0;
+    text-align:center;
+    padding: 10px;
+    }
+header a{
+    color:forestgreen;
+    padding: 1%;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    font-size: larger;
+    vertical-align: middle;
+    }
