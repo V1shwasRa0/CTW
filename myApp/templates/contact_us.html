@@ -1,0 +1,294 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="icon" href="https://i.ibb.co/gdMzy16/ct-logo.jpg" alt="Logo" class="logo-img" style="height:500px" type="image/x-icon">
+    <title>Climate Troopers Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            background: url("https://i.ibb.co/L5Q16nd/bgimg.jpg");
+        }
+
+        .logo {
+            width: 140px;
+            height: 75px;
+
+        }
+
+        header {
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 10px;
+        }
+
+        header a {
+            color: forestgreen;
+            padding: 1%;
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+            text-decoration: none;
+            font-size: larger;
+            vertical-align: middle;
+        }
+
+        footer {
+            background-color:black;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        footer ul li {
+            display: inline-block;
+            /* margin: 0 10px; */
+            padding-left: 10px;
+            padding-right: 0px;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px none #ccc;
+            border-radius: 14px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+            background-color: #1f1b1bb0;
+            color: white;
+        }
+
+        input[type=submit] {
+            background-color: rgba(0, 255, 255, 0.658);
+            color: white;
+            padding: 12px 45px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        input::placeholder {
+            color: #ffffff; /* Set your desired placeholder color */
+        }
+        textarea::placeholder{
+            color: white;
+        }
+
+        .container {
+            
+            box-sizing: border-box;
+            border-radius: 15px;
+            background-color: #228B225e;
+            padding: 20px;
+            margin: 30px;
+            width: 40%;
+            margin-left: 32%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+   
+        }
+
+        /* Float four columns side by side */
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 0 10px;
+        }
+
+        /* Remove extra left and right margins, due to padding */
+        .row {
+            margin: 0 -5px;
+            
+            
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive columns */
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Style the counter cards */
+        .card {
+            opacity: 1;
+            padding: 16px;
+            text-align: center;
+        }
+
+
+        /* map  */
+
+        .map_sec{
+            padding: 50px 0px;
+        }
+        .map_inner h4, .map_inner p{
+            color: #000;
+            text-align: center
+        }
+        .map_inner p{
+            font-size: 13px;
+        }
+        .map_bind{
+           margin-top: 50px;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+        .map_container{
+            width: 50%;
+            margin-left: 25%;
+            
+        }
+        
+        
+    </style>
+</head> 
+
+<body>
+   <header>
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="https://i.ibb.co/gdMzy16/ct-logo.jpg" alt="Climate Troopers Logo" class="logo">
+        </a>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about_us' %}">About Us</a>
+        <a href="{% url 'our_approach' %}">Our Approach</a>
+        <a href="{% url 'our_impact' %}">Our Impact</a>
+        <a href="{% url 'c_p' %}">Corporate Partnerships</a>
+        <a href="{% url 'vol' %}">Volunteering</a>
+        <a href="{% url 'blog' %}">Blog</a>
+        <a href="{% url 'contact_us' %}">Contact Us</a>
+    </header>
+
+    <div class="container">
+        {% comment %}
+        <form action="{% url 'submit_form' %}" method="post">
+        {% endcomment %}
+        <form>
+            {% csrf_token %}
+            <h1 align="center" style="color: black;font-weight:bold;">Contact Climate Troopers</h1>
+            <label style="color: black;font-size:large;font-weight:bold" class="formtext" for="fname" align="center">Name</label>
+            <input type="text" id="fname" name="name" placeholder="Your name..">
+
+            <label style="color: black;font-size:large;font-weight:bold" class="formtext" for="lname">Email</label>
+            <input type="text" id="lname" name="email" placeholder="Your email..">
+
+            <label style="color: black;font-size:large;font-weight:bold" class="formtext" for="subject">Message</label>
+            <textarea id="subject" name="message" placeholder="Write your message.." style="height:200px"></textarea>
+
+            <input style="margin-left:40%;" type="submit" value="Submit">
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <h1 style="color: white;font-weight:bold">Email</h1>
+                <a href="mailto: climatetroopers@gmail.com" style="text-decoration: none; color: #f0f0f0;">climatetroopers@gmail.com</a>
+
+                </p>
+                
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h1 style="color: white;font-weight:bold">Address</h1>
+                <p style="font-weight: bold;color:white;font-size:x-large">102, Silver Nest, Viman Nagar, Pune, Maharashtra, 411014
+                </p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h1 style="color: white;font-weight:bold">Call us</h1>
+                <p style="color: white;font-weight:bold;font-size:x-large">+91 98904 79345</p>
+            </div>
+        </div>
+
+   
+    </div>
+    <section class="map_sec">
+        <div class="map_container">
+            <div class="map_row">
+                <div class="col-md-10 offset-md-1">
+                    <div class="map_inner">
+                        <p align="center"; style="color: white;font-size:xxx-large;font-weight:bold">Find Us on Google Map</p>
+                        <h3 align="center" style="color: white;font-weight:bold;font-size:x-large">You can visit us at anytime with the help of the map </h3>
+                        <div class="map_bind">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d945.5450416220721!2d73.9176125218361!3d18.565914453981208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1469c1c881f%3A0xf9962d42b8144dc7!2sSilver%20Nest%20Co-operative%20Housing%20Society%20Ltd!5e0!3m2!1sen!2sin!4v1710077697388!5m2!1sen!2sin" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h4>Thank You for Visiting Our Site</h4>
+        <p><a href="mailto:climatetroopers@gmail.com" style="text-decoration: none; color: #f0f0f0;"><i class="fas fa-envelope"></i> Click to E-mail Your Queries</a></p>
+        <h4>Visit us at</h4>
+        <ul>
+            <li><a href="https://www.facebook.com/profile.php?id=61556785456421&mibextid=ZbWKwL"><i class="bi bi-facebook"></i></a></li>
+            <li>|</li>
+            <li><a href="https://www.instagram.com/climatetroopers?igsh=MWtrM2kzMDRudDg5Zg=="><i class="bi bi-instagram"></i></a></li>
+            <li><li>|</li>
+            <li><a href="https://x.com/ClimateTroopers?t=LxPutbcgN2jjGEOKC-cgAw&s=09"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+              </svg></a></li>
+        </ul>
+        <p>&copy; 2024 Climate Troopers. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
