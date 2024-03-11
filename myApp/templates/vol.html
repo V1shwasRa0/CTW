@@ -3,6 +3,8 @@
 <html lang="en">
     {% load static %}
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="icon" href="https://i.ibb.co/gdMzy16/ct-logo.jpg" alt="Logo" class="logo-img" style="height:500px" type="image/x-icon">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
@@ -124,41 +126,40 @@
                     font-size: larger;
                     vertical-align: middle;
                 }
-        ul {
-            list-style: none;
-            padding: 10px;
-        }
+
 
         footer {
-            background-color: #333;
+            background-color:black;
             color: #fff;
-            padding: 10px;
+            padding: 20px 0;
             text-align: center;
-            bottom: 0;
-            width: 100%;
         }
 
-        li {
-            display: inline;
-            margin: 20px;
+        footer p {
+            margin: 10px 0;
         }
-        li a{
+
+        footer ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        footer ul li {
+            display: inline-block;
+            /* margin: 0 10px; */
+            padding-left: 10px;
+            padding-right: 0px;
+        }
+
+        footer ul li a {
+            color: #fff;
             text-decoration: none;
         }
-        .fl{
-            width: 25px;
-            height: 25px;
-        }
-        .f2{
-            width: 23px;
-            height: 23px;
-        }
-        .f3{
-            width: 21px;
-            height: 21px;
-            border-radius: 5px;
-        }
 
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
         </style>
         
         
@@ -234,31 +235,21 @@
             </div> -->
         </a>
     </div>
-
     <footer>
         <h4>Thank You for Visiting Our Site</h4>
-        <a href = "mailto: climatetroopers@gmail.com" style="text-decoration: none; color: #f0f0f0;">Click to E-mail Your Queries</a>
+        <p><a href="mailto:climatetroopers@gmail.com" style="text-decoration: none; color: #f0f0f0;"><i class="fas fa-envelope"></i> Click to E-mail Your Queries</a></p>
         <h4>Visit us at</h4>
-        <ul type="disc">
-            <li>
-                <a href="https://www.facebook.com/profile.php?id=61556785456421&mibextid=ZbWKwL">
-                    <img src="https://i.ibb.co/Ykvx3Lv/fblog.webp" class="fl">
-                </a>
-            </li>
-            <li>*</li>
-            <li>
-                <a href="https://www.instagram.com/climatetroopers?igsh=MWtrM2kzMDRudDg5Zg==">
-                    <img src="https://i.ibb.co/1nbR1xv/iglogo.png" class="f2">
-                </a>
-            </li>
-            <li>*</li>
-            <li>
-                <a href="https://x.com/ClimateTroopers?t=LxPutbcgN2jjGEOKC-cgAw&s=09">
-                    <img src="https://i.ibb.co/k3d3kQF/xlogo.jpg" class="f3">
-                </a>
-            </li>
+        <ul>
+            <li><a href="https://www.facebook.com/profile.php?id=61556785456421&mibextid=ZbWKwL"><i class="bi bi-facebook"></i></a></li>
+            <li>|</li>
+            <li><a href="https://www.instagram.com/climatetroopers?igsh=MWtrM2kzMDRudDg5Zg=="><i class="bi bi-instagram"></i></a></li>
+            <li><li>|</li>
+            <li><a href="https://x.com/ClimateTroopers?t=LxPutbcgN2jjGEOKC-cgAw&s=09"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+              </svg></a></li>
         </ul>
         <p>&copy; 2024 Climate Troopers. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
